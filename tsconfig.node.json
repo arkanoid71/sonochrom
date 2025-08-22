@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "outDir": "dist-electron",
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "electron/**/*.ts"
+  ]
+}

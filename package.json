@@ -1,0 +1,63 @@
+{
+  "name": "musical-painting",
+  "version": "1.0.0",
+  "private": false,
+  "type": "commonjs",
+  "productName": "Musical Painting",
+  "description": "Turn microphone input into generative artwork (Electron + React + Canvas).",
+  "main": "dist-electron/electron/main.js",
+  "author": "Open Source Contributors",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"cross-env VITE_DEV=1 ELECTRON_START_URL=http://localhost:5173 tsx electron/main.ts\"",
+    "build:web": "vite build",
+    "build": "vite build && tsc -p tsconfig.electron.json",
+    "start": "cross-env ELECTRON_START_URL=file://$PWD/dist/index.html node dist-electron/electron/main.js",
+    "electron:build": "npm run build && electron-builder -m",
+    "lint": "echo no-lint"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.23",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^31.2.0",
+    "electron-builder": "^24.13.3",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.7",
+    "tsx": "^4.15.5",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2"
+  },
+  "build": {
+    "appId": "com.blocklions.musicalpainting",
+    "mac": {
+      "category": "public.app-category.music",
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "hardenedRuntime": true,
+      "entitlements": "entitlements.mac.plist",
+      "entitlementsInherit": "entitlements.mac.plist",
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "This app visualizes live audio from your microphone to generate artwork."
+      }
+    },
+    "files": [
+      "dist/**",
+      "dist-electron/**",
+      "electron/**",
+      "src/**",
+      "index.html",
+      "public/**",
+      "package.json"
+    ]
+  }
+}
