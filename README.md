@@ -34,7 +34,7 @@ Play an instrument, sing, or just make sounds — and watch your audio become dy
 
 ## 📸 Screenshots
 
-*(Add some screenshots or GIF demos here)*
+<img width="1190" height="788" alt="Screenshot 2025-08-22 at 10 54 56" src="https://github.com/user-attachments/assets/a4c09945-0cf3-4a26-82a4-4ff06167af32" />
 
 ---
 
@@ -94,6 +94,6 @@ Please open an issue or PR if you’d like to help.
 
 ## 📜 License
 
-MIT © 2025 [Your Name](https://github.com/your-username)
+MIT © 2025 [Laurent Strauss](https://github.com/your-username)
 
 ---
